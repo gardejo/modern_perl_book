@@ -1,27 +1,21 @@
-=head0 The Perl Philosophy
+=head0 Perlの哲学
 
-Perl is a language for getting things done.  It's flexible, forgiving, and
-malleable.  In the hands of a capable programmer, it can accomplish almost any
-task, from one-liner calculations and automations to multi-programmer,
-multi-year projects and everything in between.
+Perlは仕事を成し遂げる（GTD: getting things done）ための言語です。
+つまりそれは柔軟であり、寛容であり、融通の利くものだということです。
+有能なプログラマーによって使われるPerlは、ワンライナーN<訳注: シェルのコマンドラインを使って、1行で書ける、その場限りのPerlプログラムのこと。>による計算や自動化から、複数プログラマーと複数ユーザーが介在するプロジェクトに至るまでの、ほとんど全ての任務を達成することができます。
 
-Perl is powerful, and modern Perl--Perl which takes advantage of the best
-knowledge, deepest experience, and reusable idioms of the global Perl
-community--is maintainable, fast, and easy to use.  Perhaps most
-importantly, it can help you do what you need to do with little frustration
-and no ceremony.
+Perlは強力であり、モダンPerl--地球規模のPerlコミュニティーによる最良の知識・深い経験・再利用可能な慣用句（イディオム）を活かしたPerl--は保守しやすく、高速で、使いやすいものです。
+恐らくもっとも重要なことは、あなたがごくわずかな不満しか抱かず、作法を覚えることもなしに、あなたが必要とすることについてPerlがあなたを助けることができるということでしょう。
 
-Perl is a pragmatic language.  You, the programmer, are in charge.  Rather than
-manipulating your mind and your problems to fit how the language designer
-thinks you should write programs, Perl allows you to solve your problems as you
-see fit.
+Perlは実用主義の言語です。
+プログラマーであるあなたは、責任を負う立場にあります。
+あなたの精神とあなたの問題を操作して、あなたがプログラムを書くべき内容についての言語設計者の考えへ適合させる（※再考: ガチガチだ……）よりはむしろ、Perlはあなたが自身の問題を自由裁量で解決することを許容しています。
 
-Perl is a language which can grow with you.  You can write useful programs with
-the knowledge that you can learn in an hour of reading this book.  Yet if you
-take the time to understand the philosophies behind the syntax, semantics, and
-design of the language, you can be far more productive.
+Perlはあなたと共に成長することができる言語です。
+あなたは、本書を1時間で読むことで学べる知識によって、有用なプログラムを書くことができます
+単なる文法の裏にある哲学・セマンティクス・言語設計を理解するための時間を、もしあなたが確保できるのならば、あなたは生産性をはるかに上げることができます。
 
-First, you need to know how to learn more.
+まずは、Perlのさらなる学び方を知る必要があります。
 
 L<perldoc>
 
