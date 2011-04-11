@@ -1,30 +1,24 @@
-=head0 *Preface
+=head0 *序文
 
-Perl turns 23 years old later this year.  The language has gone from a simple
-tool for system administration somewhere between shell scripting and C
-programming (Perl 1) to a powerful, general-purpose language steeped in a rich
-heritage (Perl 5) and a consistent, coherent, rethinking of programming in
-general intended to last for another 25 years (Perl 6).
+Perlは今年N<訳注: 原著が出版された2010年。>後半には23歳になります。
+この言語は、シェルスクリプティングやCプログラミングのようなシステム管理者向けの簡素な道具（Perl 1）から、強力で・汎用的な・豊かな遺産を備えた言語（Perl 5）に変貌し、今や一貫性のある・整然とした・プログラミング全般を見直した、さらに25年間続くことを意図する言語（Perl 6）にまで成長しました。
 
-Even so, most Perl 5 programs in the world take far too little advantage of the
-language.  You I<can> write Perl 5 programs as if they were Perl 4 programs (or
-Perl 3 or 2 or 1), but programs written to take advantage of everything amazing
-the worldwide Perl 5 community has invented, polished, and discovered are
-shorter, faster, more powerful, and easier to maintain than their alternatives.
+とはいえ、世界中にある多くのPerl 5プログラムは、この言語の長所のごくわずかしか活用していません。
+あなたはPerl 5によるプログラムを、まるでPerl 4である（またはPerl 3・2・1である）かのように書くこともI<できます>が、世界中のPerl 5コミュニティーを感心させる全ての長所を活用するべくして書かれたプログラムは、新しく・洗練されたものであり、他の選択肢よりも短く・高速で・より強力で・保守しやすいということに気付くでしょう。
 
-I<Modern Perl> is a loose description of how experienced and effective Perl 5
-programmers work.  They use language idioms.  They take advantage of the CPAN.
-They're recognizably Perlish, and they show good taste and craftsmanship and a
-full understanding of Perl.
+本書I<モダンPerl>は、熟練した、能力のあるPerl 5プログラマーがどのように仕事をしているかを、簡潔に説明したものです。
+彼らは、言語の慣用句（イディオム）を用いています。
+彼らはCPANを駆使しています。
+彼らははっきりとPerl的であり、良識と腕前を示し、Perlを十分に理解しています。
 
-You can learn this too.
+あなたも、それを学ぶことができます。
 
-=head1 Running Modern Perl
+=head1 モダンPerlの稼働
 
 =begin sidebar
 
-The Modern::Perl module is available from the CPAN.  Install it yourself or
-replace it with:
+CPANからModern::Perlモジュールを入手できます。
+これをインストールするか、あるいはプログラム例の記述を以下のように置き換えてください。
 
 =begin programlisting
 
@@ -36,15 +30,13 @@ replace it with:
 
 X<C<feature>>
 
-With these lines in every example program, Perl will warn you of dubious
-constructs and typos and will enable new features of Perl 5.10 through the
-C<feature> pragma (L<pragmas>).  For now, assume these lines are always
-present.  You will understand them soon.
+全てのプログラム例にこれらの行を備えることで、Perlは疑わしい構造や誤字について警告を発し、また、C<feature>プラグマ（L<プラグマ|pragmas>の章も参照してください）を介してPerl 5.10の新機能を有効にします。
+さしあたっては、これらの行は常に存在するものN<訳注: いわゆる「おまじない」のことです。>として想定してください。
+あなたはこれらの内容をすぐに理解することでしょう。
 
 =end sidebar
 
-Unless otherwise mentioned, code snippets always assume the basic skeleton of a
-program:
+特段の言及がない限り、コードスニペットは常に以下のようなプログラムの基本的な骨組みがあると見なします。
 
 =begin programlisting
 
@@ -52,13 +44,13 @@ program:
 
     use Modern::Perl;
 
-    # example code here
+    # ここからプログラム例
     ...
 
 =end programlisting
 
-Other code snippets use testing functions such as C<ok()>, C<like()>, and
-C<is()> (L<testing>).  That skeleton program is:
+他のコードスニペットでは、テスト関数（L<テスト|testing>の章も参照してください）、たとえばC<ok()>やC<like()>やC<is()>を用いています。
+そのプログラムの骨組みは以下の通りです。
 
 =begin programlisting
 
@@ -67,76 +59,65 @@ C<is()> (L<testing>).  That skeleton program is:
     use Modern::Perl;
     B<use Test::More;>
 
-    # example code here
+    # ここからプログラム例
     ...
     done_testing();
 
 =end programlisting
 
-The examples in this book work best with Perl 5.10.0 or newer; ideally at least
-Perl 5.10.1.  Many examples will work on older versions of Perl 5 with modest
-changes, but you will have more difficulty with anything older than 5.10.0.
-This book also describes (but does not I<require> the use of) features found in
-Perl 5.12.
+本書の例はPerl 5.10.0、またはそれ以降（理想としては最低でもPerl 5.10.1）のバージョンで最適に動きます。
+例の大部分は、わずかな修正を加えるだけでPerl 5の古いバージョンでも動くでしょうが、Perl 5.10.0より古いバージョンを使うと、より面倒なことになるでしょう。
+また、本書はPerl 5.12から備えられた機能についても説明します（が、それらを使うことはI<必須>ではありません）。
+あなたはN<訳注: あなたがシステム管理者でなくても。>たいていの場合はPerlの新しいバージョンを自分自身でインストールすることができます。
+Windowsユーザーであれば、U<http://www.strawberryperl.com/>から、Strawberry Perlをダウンロードしてください。
+他の、Perl 5（とC言語のコンパイラーとその他の開発ツール群）が既にインストールされているオペレーティングシステムのユーザーであれば、C<App::perlbrew>N<インストール方法については、U<http://search.cpan.org/perldoc?App::perlbrew>)をご覧ください。>というCPANモジュールのインストールから始めてください。
 
-You can often install a new version of Perl yourself.  Windows users, download
-Strawberry Perl from U<http://www.strawberryperl.com/>.  Users of other
-operating systems with Perl 5 already installed (and a C compiler and the other
-development tools), start by installing the CPAN module C<App::perlbrew>N<See
-U<http://search.cpan.org/perldoc?App::perlbrew> for installation
-instructions.>.
+C<perlbrew>はPerl 5の複数のバージョンをインストールおよび管理することができます。
+デフォルトでは、それらはあなたの所有するホームディレクトリーにインストールされます。
+つまり、システムに既にインストールされているPerlに影響を及ぼすことなくPerl 5の複数のバージョンをインストールできるだけでなく、何らかのモジュールをそれらのディレクトリーへインストールしたい場合であっても、あなたのシステムの管理者に対して明示的なパーミッションを与えてくれるようなお願いをせずに済むのです。
 
-C<perlbrew> allows you to install and to manage multiple versions of Perl 5.
-By default, it installs them to your own home directory.  Not only can you have
-multiple versions of Perl 5 installed without affecting the system Perl but you
-can also install any module you like into these directories without asking your
-system administrator for specific permission.
+=head1 Perl 5とPerl 6
 
-=head1 Perl 5 and Perl 6
-
-Should you learn Perl 5 or Perl 6?  They share philosophy and syntax and
-libraries and community; they fill different niches.  Learn Perl 5 if:
+あなたはPerl 5とPerl 6のどちらを学習するべきでしょうか？
+これらの言語は哲学・文法・ライブラリー・コミュニティーを共有していて、それぞれ様々な得意分野があります。
+次のような場合は、Perl 5を学んでください。
 
 =over 4
 
-=item * You have existing Perl 5 code to maintain
+=item * 保守すべき既存のPerl 5コードがある
 
-=item * You need to take advantage of CPAN modules
+=item * CPANモジュールを活用する必要がある
 
-=item * Your deployment strategy requires rigorous stability
+=item * 開発戦略によって厳格な安定性が求められている
 
 =back
 
-Learn Perl 6 if:
+次のような場合は、Perl 6を学んでください。
 
 =over 4
 
-=item * You're comfortable managing frequent upgrades
+=item * 頻繁なアップグレードを管理することが心地よい
 
-=item * You can afford to experiment with new syntax and features
+=item * 新たな文法や機能を実験する余裕がある
 
-=item * You need new features only available in Perl 6
+=item * Perl 6でのみ使える新機能が必要である
 
-=item * You can contribute to its development (whether patches, bug reports,
-documentation, sponsorship, or other resources)
+=item * Perl 6の開発に貢献できる（パッチか、バグの報告か、文書化か、資金提供か、その他のリソースによって）
 
 =back
 
-In general, Perl 5 development is conservative with regard to the core
-language.  For good or for ill, change occurs slowly.  Perl 6 is more
-experimental, as it considers finding the best possible design more important
-than keeping old code working.  Fortunately, you can learn and use both
-languages (and they interoperate to an ever-improving degree).
+一般的には、コア言語に対するPerl 5の開発は保守的です。
+良くも悪くも、変化はゆっくりと現れます。
+Perl 6はより実験的です。古いコードの動作を維持することよりも、最良の設計を見出すことをより重視するように検討されています。
+幸いにして、あなたは両方の言語を学び、使うことができます（さらに、一層の向上のために（※再考: ガチガチだ……）それらを同時に運用することもできます）。
 
-This book discusses Perl 5.  To learn more about Perl 6, see
-U<http://perl6.org/>, try Rakudo (U<http://www.rakudo.org/>), and refer to the
-book I<Using Perl 6>, also published by Onyx Neon Press.
+本書はPerl 5について論じています。
+Perl 6についてより学びたい場合には、U<http://perl6.org/>を参照し、Rakudo(U<http://www.rakudo.org/>)を試し、Onyx Neon Press社も出版しているI<Using Perl 6>という書籍をひもといてください。
 
-=head1 Credits
+=head1 謝辞
 
-This book would not have been possible in its current form without questions,
-comments, suggestions, advice, wisdom, and encouragement from many, many
-people.  In particular, the author and editor would like to thank:
+とても多くの方々の質問・批評・提案・助言・知識・励ましがなければ、本書は現在の状態にはなりませんでした。
+特に、著者と編集者は以下に掲げる方々に感謝を捧げます。
 
 John SJ Anderson, Peter Aronoff, Lee Aylward, Alex Balhatchet, Ævar Arnfjörð
 Bjarmason, Matthias Bloch, John Bokma, Vasily Chekalkin, Dmitry Chestnykh, E.
@@ -151,6 +132,6 @@ Rolsky, Gabrielle Roth, Andrew Savige, Lorne Schachter, Dan Scott, Alexander
 Scott-Johns, Phillip Smith, Christopher E. Stith, Mark A. Stratman, Bryan
 Summersett, Audrey Tang, Scott Thomson, Ben Tilly, Sam Vilain, Larry Wall,
 Colin Wetherbee, Frank Wiegand, Doug Wilson, Sawyer X, David Yingling, Marko
-Zagozen, harleypig, hbm, and sunnavy.
+Zagozen, harleypig, hbm, そして sunnavy.
 
-Any errors are the fault of the author's own stubbornness.
+全ての誤りは、融通の利かない著者によるものですN<訳注：翻訳に関する全ての誤りは、未熟な訳者の責任です>。
